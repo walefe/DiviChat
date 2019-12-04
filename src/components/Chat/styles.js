@@ -6,13 +6,33 @@ export const Container = styled.div`
 
   background: #6272a4;
 
+  form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   input {
-    margin: 5px 50px;
+    margin: 5px 0;
     padding: 10px 10px;
     height: 30px;
-    width: 900px;
+    width: 800px;
     border-radius: 4px;
     border: none;
+  }
+
+  button {
+    height: 30px;
+    padding: 3px 3px;
+    margin-left: 5px;
+    border-radius: 4px;
+    border: none;
+    background: #fff;
+    color: black;
+
+    svg {
+      align-self: center;
+    }
   }
 `;
 
