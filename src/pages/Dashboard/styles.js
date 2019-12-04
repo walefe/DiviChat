@@ -5,6 +5,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
 
-  height: 100%;
+  min-height: 100%;
+  height: auto;
   background: #282a36;
 `;

@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
+
+import { MdSend } from 'react-icons/md';
 
 import { useConversation } from '~/context/Conversation';
 import { Container, Header, ChatList, Message } from './styles';
 
 export default function Chat() {
   const { messages } = useConversation();
+  const [newMessage] = useState([]);
 
   return (
     <Container>
@@ -14,13 +17,18 @@ export default function Chat() {
       <ChatList>
         {messages
           ? messages.messages.map(message => (
-              <Message direction={message.direction}>
+              <Message key={message._id} direction={message.direction}>
                 <p>{message.value}</p>
               </Message>
             ))
           : 'Aguardando menssagens!'}
       </ChatList>
-      <input type="text" placeholder="Send a message.." />
+      <form>
+        <input type="text" placeholder="Send a message.." value={newMessage} />
+        <button type="submit">
+          <MdSend size={20} />
+        </button>
+      </form>
     </Container>
   );
 }
